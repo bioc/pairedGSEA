@@ -1,3 +1,18 @@
+# pairedGSEA 1.12.1
+
+## Bug fixes
+
+* `paired_ora()`: the combined (paired) analysis now uses genes tested for
+  both expression and splicing as its universe; previously genes without a
+  splicing result were included. Missing paired results are now filled in
+  the paired columns instead of overwriting the splicing relative risk and
+  enrichment score. Affects paired ORA results since 1.1.0 (Bioconductor
+  3.18); expression-only and splicing-only ORA are unchanged.
+* `paired_diff()`: `test = "Wald"` no longer fails; the reduced model is
+  only used for the likelihood ratio test.
+* The reduced model for the likelihood ratio test now removes the group
+  term by name instead of the first term of the design.
+
 # pairedGSEA 1.7.0
 
 * Ensure compatibility with updated msigdbr and new R version
